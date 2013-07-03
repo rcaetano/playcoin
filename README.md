@@ -1,8 +1,8 @@
 # Playcoin
 P2P exchange for digital content, distribution and payment
 
-Author: Richard Caetano, caetano@gmail.com
-Date: July 1st, 2013
+- Author: Richard Caetano, caetano@gmail.com
+- Date: July 1st, 2013
 
 
 ## Introduction
