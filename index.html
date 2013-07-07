@@ -4,7 +4,7 @@
   <head>
     <meta charset='utf-8' />
     <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Playcoin : P2P exchange for digital media distribution and payment" />
+    <meta name="description" content="Playcoin : P2P exchange for digital content, distribution and payment" />
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
@@ -19,7 +19,7 @@
           <a id="forkme_banner" href="https://github.com/rcaetano/playcoin">View on GitHub</a>
 
           <h1 id="project_title">Playcoin</h1>
-          <h2 id="project_tagline">P2P exchange for digital media distribution and payment</h2>
+          <h2 id="project_tagline">P2P exchange for digital content, distribution and payment</h2>
 
             <section id="downloads">
               <a class="zip_download_link" href="https://github.com/rcaetano/playcoin/zipball/master">Download this project as a .zip file</a>
@@ -32,6 +32,11 @@
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
         <h2>
+<a name="abstract" class="anchor" href="#abstract"><span class="octicon octicon-link"></span></a>Abstract</h2>
+
+<p>Playcoin is a crypto-currency, similar to Bitcoin, which can be used to purchase digital media directly from the content creator.  Playcoins are earned by mining or purchased from an exchange and can be used to purchase media files.  Those who purchase the media are then able to host the media for sale to others while earning a small download fee thus creating an incentive to not pirate the media.  </p>
+
+<h2>
 <a name="introduction" class="anchor" href="#introduction"><span class="octicon octicon-link"></span></a>Introduction</h2>
 
 <p>Media distribution has transitioned from a product in physical space to a commodity in digital space.  Markets, copyright law and ownership of the media had clear and well defined boundaries with physical products (CD, DVD, etc) as a distribution medium.  However, in the digital domain, sharing in an inherent attribute of the digital product, the media file.</p>
@@ -40,7 +45,9 @@
 
 <p>Yet, grasping at a paradigm that supports products in a physical space will limit the opportunities of what’s possible with emerging and unstoppable technologies such as BitTorrent and Bitcoins.</p>
 
-<p>What is needed is a built-in mechanism to compensate digital content creators directly for usage of their content rather than selling ownership of a product.  With a payment mechanism built in, content creators can encourage sharing of the media while expecting direct payment from from the consumer.</p>
+<p>What is needed is a built-in mechanism to compensate digital content creators directly for usage of their content rather than selling ownership of a product.  </p>
+
+<p>With a payment mechanism built in, content creators can encourage sharing of the media while expecting direct payment from from the consumer.</p>
 
 <h2>
 <a name="concepts" class="anchor" href="#concepts"><span class="octicon octicon-link"></span></a>Concepts</h2>
@@ -71,31 +78,35 @@
 <li>
 <em>Mining</em>: Confirming blocks of transactions (a la Bitcoin)</li>
 <li>
-<em>Storage</em>: By hosting media files, miners earn a "download fee".</li>
+<em>Storage</em>: By hosting media files, miners earn a download fee.</li>
 <li>
-<em>Streaming</em>: By serving streams to listeners., miners earn a "streaming fee".</li>
+<em>Streaming</em>: By serving streaming access, miners earn a streaming fee.</li>
 </ul><h2>
 <a name="content-creator" class="anchor" href="#content-creator"><span class="octicon octicon-link"></span></a>Content Creator</h2>
 
 <p><strong>Content Creators</strong> are entities who wish to release a digital media file into the Playcoin ecosystem.  </p>
 
-<p>Content Creators set the Playcoin purchase price, and an optional streaming price, as well as the fees paid to the <strong>Storage Hosts</strong> for hosting, signing and streaming the media file.</p>
+<p>Content Creators set the Playcoin purchase price and an optional streaming price which is signed and timestamped on the block chain.  Price changes can be posted at any time and cost a small listing fee.  The fee is collected by the miner who confirms the listing.</p>
+
+<p>The media file and price update are described as a <strong>Media File Listing</strong>.  Hosts broadcast queries for media file listings between each other.</p>
+
+<p>When a media file is purchased, it is encrypted with the buyer's public key and made available for download over the P2P network </p>
 
 <h2>
 <a name="media-hosts" class="anchor" href="#media-hosts"><span class="octicon octicon-link"></span></a>Media Hosts</h2>
 
-<p>Content on the network are distrubuted via <strong>Media Hosts</strong>.  Media hosts connect to the P2P and can do the following:  </p>
+<p>Media files on the network are distributed via <strong>Media Hosts</strong>.  Media hosts connect to the P2P network and can do the following:  </p>
 
 <ul>
-<li>Connect and interact with other hosts on the Playcoin network</li>
-<li>Earn Playcoins by mining (confirming transactions on the network)</li>
+<li>Connect and interact with other hosts on the Playcoin network to search for content or other social networking aspects.</li>
+<li>Earn Playcoins by mining</li>
 <li>Purchase media from content creators stored by other hosts</li>
-<li>Earn storage fee for storing content purchased by other hosts</li>
+<li>Earn <strong>Download Fee</strong> for storing content purchased by other hosts</li>
 <li>Earn fees for streaming content</li>
 </ul><h2>
 <a name="mining" class="anchor" href="#mining"><span class="octicon octicon-link"></span></a>Mining</h2>
 
-<p>Mining is the process of spending computation power to secure Playcoin transactions against reversal and introducing new Playcoins to the system.</p>
+<p>Mining is the process of using computation power to secure Playcoin transactions against reversal and introducing new Playcoins to the system.</p>
 
 <p>See <a href="https://en.bitcoin.it/wiki/FAQ#Mining">Bitcoin Mining</a></p>
 
@@ -104,16 +115,16 @@
 
 <p>Playcoins can be used to purchase a copy of a media file from any <strong>Storage Host</strong> who has previously purchased the file.  </p>
 
-<p>The purchase price is set/updated by the content creator and includes a small <strong>storage fee</strong> which is kept by the storage host.</p>
+<p>The purchase price is set/updated by the content creator while the media host sets and keeps a small <strong>Download Fee</strong>.</p>
 
-<p>[DRAFT] When a media file is purchased from a storage host, the file must be encrypted with the purchasing host's public key and include a hash of the storage host's key showing the chain of purchases originating back to the original content creator.</p>
+<p>[DRAFT] When a media file is purchased from a storage host, the file must be encrypted with the purchasing host's public key and include a chain of purchases originating back to the original content creator.</p>
 
 <p>Media file integrity is validated by the hash of the original content creators signature.</p>
 
 <h2>
 <a name="streaming" class="anchor" href="#streaming"><span class="octicon octicon-link"></span></a>Streaming</h2>
 
-<p>[DRAFT]  Storage hosts may also earn play coins by <strong>Streaming</strong>  a media file.  Streaming royalties and streaming fees must be defined</p>
+<p>[Draft Proposal]  Media Hosts may "friend" another host and stream their content paying an optional fee.  Availability is subject to the media host's uptime.  The server Media Host may set some restrictions, 30 sec clips only, 0 or more repeats, etc to encourage the purchase of the media.</p>
 
 <h2>
 <a name="consumers" class="anchor" href="#consumers"><span class="octicon octicon-link"></span></a>Consumers</h2>
@@ -129,10 +140,11 @@
 
 <ul>
 <li><p><em>Playcoins are limited and distributed over time</em> at the inverse of computing power.  Playcoin price discovery happens through open exchanges (Playcoin/Bitcoin, Playcoin/USD, etc)</p></li>
-<li><p><em>Playcoins are rewarded to miners</em> for submitting proof of work.</p></li>
+<li><p><em>Playcoins have a built in demurrage of 5% a year</em> to encourage spending rather than hoarding.</p></li>
+<li><p><em>Playcoins are rewarded to miners</em> for confirming transactions.</p></li>
 <li><p><em>Content creators provide media content</em> with a purchase price set in play coins.</p></li>
-<li><p><em>Content Creators exchange their Playcoins for other currencies</em> through open exchanges; compensated for their work.</p></li>
-<li><p><em>To earn Playcoin storage fees, Storage Hosts store purchased copies</em> of media file  There is incentive to purchase and store popular content, thus leading to an incentive to promote the catalog.</p></li>
+<li><p><em>Content Creators exchange their Playcoins for other currencies</em> through open exchanges.</p></li>
+<li><p><em>To earn Playcoin download fees, Storage Hosts store purchased copies</em> of media file.  This is the incentive to purchase and store content rather than sharing it.</p></li>
 </ul>
       </section>
     </div>
